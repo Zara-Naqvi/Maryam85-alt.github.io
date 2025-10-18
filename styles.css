@@ -1,68 +1,84 @@
-:root{
-  --bg-overlay: rgba(5,10,20,0.45);
-  --accent: #ffffff;
-  --pill-bg: rgba(255,255,255,0.85);
-  --pill-text: #111;
-  --primary-pill: #f3f4f6;
-  --max-width: 1200px;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProjectXpert — Your Trusted Partner</title>
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui;}
-a{color:inherit;text-decoration:none}
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-.site-header{
-  position:fixed;top:14px;left:20px;right:20px;
-  display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:40;
-}
+<body>
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="site-header">
+    <button class="hamburger" aria-label="Open menu">&#9776;</button>
 
-.hamburger{display:none}
+    <nav class="top-links">
+      <a href="#services" class="pill">About services</a>
+      <a href="#home" class="pill">Home</a>
+    </nav>
 
-.top-links,.auth-links{display:flex;gap:10px;align-items:center}
-.pill{
-  background:var(--pill-bg);color:var(--pill-text);
-  padding:8px 14px;border-radius:24px;font-weight:600;
-  box-shadow:0 2px 6px rgba(0,0,0,0.15);
-}
-.pill.small{padding:6px 10px;font-size:0.9rem}
+    <div class="auth-links">
+      <a class="pill small" href="#signup">Sign Up</a>
+      <a class="pill small primary" href="#login">Login</a>
+    </div>
+  </header>
 
-.hero{
-  height:90vh;position:relative;display:flex;align-items:center;justify-content:center;
-  background:url('images/hero-bg.jpg') center/cover no-repeat;color:white;
-}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1;}
+  <!-- ===== HERO SECTION ===== -->
+  <main id="home" class="hero">
+    <div class="hero-overlay"></div>
 
-.hero-inner{position:relative;z-index:2;max-width:var(--max-width);padding:40px;text-align:left;}
-.logo-block{display:flex;align-items:center;gap:16px}
-.logo{width:80px;height:80px;border-radius:50%}
-.brand{font-family:'Playfair Display',serif;font-size:42px;margin:0;}
-.xpert{font-style:italic}
+    <div class="hero-inner">
+      <div class="logo-block">
+        <img src="logo.jpg" alt="ProjectXpert logo" class="logo" />
+        <h1 class="brand">Project<span class="xpert">Xpert</span></h1>
+      </div>
 
-.tagline{margin-top:12px;font-size:26px;letter-spacing:2px;text-transform:uppercase}
-.subtext{margin-top:10px;max-width:700px;color:rgba(255,255,255,0.8);line-height:1.6}
-.cta{display:inline-block;margin-top:20px;padding:12px 28px;border-radius:28px;background:white;color:black;font-weight:700}
+      <h2 class="tagline">YOUR TRUSTED PARTNER FOR EVERY TASK</h2>
+      <p class="subtext">
+        From IT solutions and software development to web design and technical projects,
+        ProjectXpert is here to handle it all. Post your task, set your prices, and let our team
+        deliver secure, professional, and timely results you can trust.
+      </p>
 
-.thumbs{position:absolute;right:6vw;top:10vh;z-index:2;}
-.thumb{width:80px;height:80px;border-radius:12px;margin:10px 0;box-shadow:0 6px 16px rgba(0,0,0,0.4)}
-.t2{width:160px;height:110px}
-.t3{width:110px;height:110px}
-.t4{width:70px;height:70px;border-radius:50%}
+      <a href="#contact" class="cta">Let's start</a>
+    </div>
 
-.site-footer{
-  background:#f2f3f5;color:#111;padding:28px 32px;
-  display:flex;gap:30px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
-}
-.footer-left h3{margin:0 0 8px 0;}
-.footer-links{list-style:none;padding:0;margin:0}
-.footer-links li{margin:10px 0;font-weight:600}
-.logo-sm{width:60px;height:60px;border-radius:8px}
+    <!-- ===== RIGHT-SIDE THUMB IMAGES ===== -->
+    <div class="thumbs">
+      <img src="thumb1.jpg" alt="" class="thumb t1" />
+      <img src="thumb2.jpg" alt="" class="thumb t2" />
+      <img src="thumb3.jpg" alt="" class="thumb t3" />
+      <img src="thumb4.jpg" alt="" class="thumb t4" />
+      <img src="thumb5.jpg" alt="" class="thumb t5" />
+      <img src="thumb6.jpg" alt="" class="thumb t6" />
+      <img src="thumb7.jpg" alt="" class="thumb t7" />
+    </div>
+  </main>
 
-@media (max-width:900px){
-  .thumbs{display:none}
-  .hero-inner{text-align:center;padding:24px}
-}
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-left">
+      <h3>Contact Us</h3>
+      <p><a href="mailto:projectXpert.services@gmail.com">projectXpert.services@gmail.com</a></p>
+      <p>© <span id="year"></span> ProjectXpert</p>
+    </div>
 
+    <div class="footer-center">
+      <ul class="footer-links">
+        <li>⚪ Privacy policy</li>
+        <li>🏠 Home</li>
+        <li>👤 How to create account?</li>
+        <li>🧭 How it works?</li>
+      </ul>
+    </div>
 
+    <div class="footer-right">
+      <img src="logo.jpg" alt="logo small" class="logo-sm"/>
+    </div>
+  </footer>
 
-
-
+  <script src="script.js"></script>
+</body>
+</html>
